@@ -9,10 +9,11 @@ function hello() {
   $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
 
   $speak.Speak('Hello...')
-
-  Remove-Item alias:cd
+  
+  echo "Hello"
 }
 
+Remove-Item alias:cd
 Set-Alias cd hello
 
 cls
