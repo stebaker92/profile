@@ -1,11 +1,18 @@
-echo "Test String"
 
-Add-Type -AssemblyName System.speech
+function hello() {
+[alias("HelloWorld")]
+   param(
+     [string] $name
+   )
+  Add-Type -AssemblyName System.speech
 
-$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+  $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
 
-$speak.Speak('Hello...')
+  $speak.Speak('Hello...')
 
-Remove-Item alias:cd
+  Remove-Item alias:cd
+}
+
+Set-Alias cd hello
 
 cls
